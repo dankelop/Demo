@@ -14,27 +14,37 @@
     <title>Title</title>
 </head>
 <body>
-<table>
-    <tr>
-        <th width="20%">姓名</th>
-        <th width="20%">请假原因</th>
-        <th width="20%">创建时间</th>
-        <th width="20%">开始时间</th>
-        <th width="20%">结束时间</th>
-    </tr>
-    <c:forEach items="${queryAll}" var="leave">
-        <tr>
-            <th>${leave.leaveName}</th>
-            <th>${leave.leaveText}</th>
-            <th>
-                <fmt:formatDate value="${leave.createTime}" pattern='yyyy-MM-dd HH:mm:ss'/>
-            </th>
-            <th>${leave.beginTime}</th>
-            <th>${leave.endTime}</th>
-        </tr>
-    </c:forEach>
-</table>
-<a href="/delete">清空数据库，索引从0开始自增！</a><br/>
-<a href="/downLeave">下载</a>
+<div class="container">
+        <table class="table table-hover" >
+            <tr>
+                <th width="20%">姓名</th>
+                <th width="20%">请假原因</th>
+                <th width="20%">创建时间</th>
+                <th width="20%">开始时间</th>
+                <th width="20%">结束时间</th>
+            </tr>
+            <c:forEach items="${queryAll}" var="leave">
+                <tr>
+                    <th>${leave.leaveName}</th>
+                    <th>${leave.leaveText}</th>
+                    <th>
+                        <fmt:formatDate value="${leave.createTime}" pattern='yyyy-MM-dd HH:mm:ss'/>
+                    </th>
+                    <th>${leave.beginTime}</th>
+                    <th>${leave.endTime}</th>
+                </tr>
+            </c:forEach>
+        </table>
+        <button type="button" class="btn btn-default" onclick="output()">导出</button>
+        <button type="button" class="btn btn-danger" onclick="emptyTable()">请空表</button>
+</div>
+    <script>
+        function output() {
+            location.href = "/downLeave";
+        }
+        function emptyTable() {
+            location.href = "/delete";
+        }
+    </script>
 </body>
 </html>

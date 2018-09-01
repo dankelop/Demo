@@ -43,7 +43,6 @@
         <h1 align="center">个人信息统计系统</h1>
         <p align="center">在这里提交你的信息</p>
     </div>
-
     <div class="row" align="center">
         <form action="/leave" method="post">
             <input type="text" name="leaveName" class="form-control" style="height:40px;width:450px"
@@ -54,22 +53,19 @@
                 </div>
                 <textarea name="leaveText" class="form-control" rows="5" style="resize: none;width: 100%"></textarea>
             </div>
-            <div>
+            <div id="tab1">
                 <span style="font-size:14px;">
                     请假时间：
-                    <input class="" type="text" name="beginTime" readonly="readonly"
-                           onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})">
+                    <input class="Wdate" type="text" id="da1" readonly="readonly"
+                           onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})">
                     -
-                    <input class="" type="text" name="endTime" readonly="readonly"
-                           onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})">
-                </span>
+                    <input class="Wdate" id="da2" type="text" readonly="readonly"
+                           onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})"></span>
                 <input type="button" value="导 出" onclick="expo()"/>
             </div>
             <input type="submit" class="btn btn-success" value="提交">
         </form>
     </div>
-
-
 </div>
 
 </body>
