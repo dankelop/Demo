@@ -22,7 +22,7 @@
                 <th width="20%">创建时间</th>
                 <th width="20%">开始时间</th>
                 <th width="20%">结束时间</th>
-            </tr>
+            </tr> 
             <c:forEach items="${queryAll}" var="leave">
                 <tr>
                     <th>${leave.leaveName}</th>
